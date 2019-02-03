@@ -85,40 +85,7 @@ set hidden
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-  " colorscheme
-  " Plug 'tomasiser/vim-code-dark'
-  Plug 'joshdick/onedark.vim'
-  let g:onedark_termcolors=16
-
-  " strip whitespace
-  Plug 'ntpeters/vim-better-whitespace'
-  let g:better_whitespace_filetypes_blacklist=[
-  \ 'diff', 'gitcommit', 'unite', 'qf', 'help', 'nerdtree'
-  \ ]
-  autocmd BufWritePre * StripWhitespace
-
-  " Git
-  Plug 'tpope/vim-git'
-  Plug 'mhinz/vim-signify'
-
-  " Programming
-  Plug 'sheerun/vim-polyglot'
-
-  " Ale
-  Plug 'w0rp/ale'
-    let g:ale_enable=1
-    let g:ale_linters={
-    \ 'javascript': ['eslint'],
-    \ 'python': ['flake8'],
-    \ }
-
-    let g:ale_linter_aliases={
-    \ 'javascript': ['javascript', 'javascript.jsx', 'jsx'],
-    \ }
-
-    let g:ale_lint_on_text_changed='normal'
+  source ~/.plugin.vim
 call plug#end()
 
-set t_Co=256
-set t_ut=
-silent! colorscheme onedark
+source ~/.post-plugin.vim
